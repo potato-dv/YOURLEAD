@@ -1,0 +1,132 @@
+/* Global container spacing for consistency */
+.section-spacing {
+  padding-left: 5%;
+  padding-right: 5%;
+}
+
+/* For larger screens, keep a max width so text doesn't stretch too wide */
+.section-content {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+@media (min-width: 992px) {
+  .hero-text-left {
+    padding-left: 0%;
+    margin-left: -10%;   /* closer to left on desktop */
+  }
+}
+
+/* Navbar */
+.navbar {
+  padding-top: 0.80rem;  /* moves navbar content down */
+  padding-bottom: 1rem;
+}
+
+.full-width-navbar {
+  width: 100%;
+}
+
+.navbar-nav {
+  text-align: center;   /* center links in their container */
+}
+
+/* Navbar links white text */
+.navbar-nav .nav-link {
+  color: #fff !important;          /* white text */
+  text-decoration: none;            /* remove default underline */
+  position: relative;               /* needed for pseudo-element */
+  padding-bottom: 5px;              /* space for the line */
+  transition: color 0.3s ease;      /* optional smooth color change */
+}
+
+/* Create the line using ::after pseudo-element */
+.navbar-nav .nav-link::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0;
+  height: 2px;                      /* thickness of the line */
+  background-color: #fff;            /* color of the underline */
+  transition: width 0.3s ease;      /* smooth line animation */
+}
+
+/* On hover, expand the line */
+.navbar-nav .nav-link:hover::after {
+  width: 100%;
+}
+
+.px-5 {
+  padding-left: 5% !important;
+  padding-right: 5% !important;
+}
+
+video {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+  z-index: -2;
+}
+
+.hero-section .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.5); /* dark effect */
+  z-index: -1;
+}
+
+/* Flat button style */
+.btn-flat {
+  background-color: #fff !important;  /* white background */
+  color: #000 !important;             /* black text */
+  border: 1px solid #ccc;             /* optional light border */
+  border-radius: 0 !important;        /* remove rounded corners */
+  padding: 0.75rem 1.7rem;            /* optional sizing */
+  font-weight: 400;                    /* optional bold text */
+  transition: none;                    /* remove animation */
+}
+
+/* Fixed button styling - removed problematic overrides */
+.btn {
+  border-radius: 0 !important;
+  /* Removed color: inherit and background: none that were hiding the button */
+}
+
+.btn-navbar {
+  padding: 0.35rem 1rem;       /* smaller, compact */
+  font-weight: 400;
+  line-height: 1.2;
+  border-radius: 0.25rem;      /* slightly rounded if desired */
+  background-color: transparent; /* default background */
+  color: #fff;                  /* default text white */
+  border: 1px solid #fff;       /* border for contrast */
+  transition: all 0.2s ease;
+}
+
+/* Hover effect */
+.btn-navbar:hover {
+  background-color: #fff;
+  color: #000;
+}
+
+/* Navbar button without border */
+.btn-navbar-no-border {
+  padding: 0.35rem 1rem;
+  font-weight: 500;
+  line-height: 1.2;
+  border: none;           /* remove border */
+  border-radius: 0.25rem; /* optional rounding */
+  background-color: transparent;
+  color: #fff;            /* white text */
+  transition: all 0.2s ease;
+}
+
+/* Optional hover effect */
+.btn-navbar-no-border:hover {
+  background-color: #fff;
+  color: #000;
+}
